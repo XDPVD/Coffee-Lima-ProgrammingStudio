@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Registrar Trabajador IndieWorks</title>
+    <title>Iniciar Sesión IndieWorks</title>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
 
     <!-- Bootstrap -->
@@ -38,12 +38,12 @@
                     <li><a href="../blog/">Nosotros</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <li class="active">
                         <a href="../login/">
                             <i class="ion-android-person"></i> Iniciar Sesión
                         </a>
                     </li>
-                    <li class="active"><a href="../signup/"> Registrarse</a></li>
+                    <li><a href="../signup/"> Registrarse</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -57,75 +57,25 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 md-padding">
-                <h1 class="align-center">Registrar perfil de Trabajador</h1>
+                <h1 class="align-center">Iniciar Sesión</h1>
                 <form class="join" action="index.php" method="post">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <input type="text" name="name" value="" placeholder="Nombre" required="" class="form-control" /><br />
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" name="name" value="" placeholder="Apellido" required="" class="form-control" /><br />
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="text" name="phone" value="" placeholder="Teléfono o Celular" required="" class="form-control" /><br />
-                            </div>
                             <div class="col-sm-12">
                                 <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" /><br />
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" name="phone" value="" placeholder="DNI" required="" class="form-control" /><br />
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="text" name="phone" value="" placeholder="RUC" required="" class="form-control" /><br />
-                            </div>
-                            <div class="col-sm-12">
                                 <input type="password" name="password" value="" placeholder="Contraseña" required="" class="form-control" /><br />
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="password" name="password-confirm" value="" placeholder="Confirmar contraseña" required="" class="form-control" /><br />
                             </div>
                         </div>
                     </div>
                     <br />
 
-                    <!-- <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Guardar Modificación</button>-->
-
-                    <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                      Registrarse
+                      Iniciar Sesión<noscript></noscript>
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">
-                                        Registro Trabajador
-                                    </h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                                </div>
-                                <div class="modal-body">
-                                    ¿Esta seguro de registrarte como trabajador?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                      Cerrar
-                    </button>
-                                    <button type="button" class="btn btn-primary">
-                      Registrarse
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="xs-margin">Cancelar ></a>
 
-                    <p>
-                        Una vez registrado podrás modificar tu información cuando lo desees a través de las preferencias de usuario
-                    </p>
+                    <a href="#" class="xs-margin">Cancelar ></a>
 
                 </form>
 
