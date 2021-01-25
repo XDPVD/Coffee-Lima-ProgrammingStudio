@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Iniciar Sesión IndieWorks</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+
+    <!-- Bootstrap -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+    <link href="../assets/css/carousel.css" rel="stylesheet" />
+    <link href="../assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400,100,300" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="nav navbar-nav">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand " href="../">
+                    <i class="ion-cube"></i> IndieWorks</a>
+                <div class="navbar-brand form-group bd-search d-flex align-items-center">
+                    <div class="input-group sm-6 mb-3">
+                        <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="fa fa-search form-control-feedback btn btn-light" id="basic-addon2"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../">Inicio</a></li>
+                    <li><a href="../catalog/">Servicios</a></li>
+                    <li><a href="../blog/">Nosotros</a></li>
+                    <li><a href="../login/"> <i class="ion-android-person"></i> Iniciar Sesion</a></li>
+                    <li><a href="../signup/"> Registrarse</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+
+
+    <hr class="offset-lg hidden-xs" />
+    <hr class="offset-md" />
+
+    <div class="container">
+        <div class="row">
+            <section class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <!-- Perfil -->
+                            <div class="panel panel-default">
+                                <div class="panel-body box-profile">
+                                    <div class="text-center">
+                                        <img class="profile-user-img img-fluid img-circle" src="../favicon.png"
+                                            alt="User profile picture">
+                                    </div>
+
+                                    <h3 class="profile-username text-center">Albert Mcintire</h3>
+
+                                    <p class="text-muted text-center">Software Engineer</p>
+                                    <!--
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Followers</b> <a class="float-right">1,322</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Following</b> <a class="float-right">543</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Friends</b> <a class="float-right">13,287</a>
+                                        </li>
+                                    </ul>
+                                    -->
+
+                                    <a href="#" class="btn btn-primary btn-block"><i
+                                            class="fas fa-phone-alt mb-4"></i><b>Contactar</b></a>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                            <!-- About Me Box -->
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3>About Me</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="panel-body">
+                                    <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                                    <p class="text-muted">
+                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                    </p>
+                                    <hr>
+                                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                                    <p class="text-muted">Malibu, California</p>
+
+                                    <hr>
+
+                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+                                    <p class="text-muted">
+                                        <span class="tag tag-danger">UI Design</span>
+                                        <span class="tag tag-success">Coding</span>
+                                        <span class="tag tag-info">Javascript</span>
+                                        <span class="tag tag-warning">PHP</span>
+                                        <span class="tag tag-primary">Node.js</span>
+                                    </p>
+
+                                    <hr>
+
+                                    <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                                        fermentum enim neque.</p>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.CONFIG-->
+                        <div class="col-md-9">
+                            <div class="panel panel-default">
+                                <!-- PANEL -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <a class="nav-link active" href="#mis_servicios" data-toggle="tab"><b>Mis Servicios</b></a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a class="nav-link " href="#agregar_servicio" data-toggle="tab"><i
+                                                    class="fas fa-plus mb-4"></i><b>Agregar Servicio</b></a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a class="nav-link" href="#agregar_servicio" data-toggle="tab"><i
+                                                    class="fas fa-plus mb-4"></i><b>Mis Publicaciones</b></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <hr class="offset-lg hidden-xs" />
+
+
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <!--MIS SERVICIOS-->
+                                        <div class="tab-pane" id="mis_servicios">
+                                            <div class="content">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                        <table class="table table-xs">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Servicio</th>
+                                                                    <th scope="col">Imagen</th>
+                                                                    <th scope="col">Detalles</th>
+                                                                    <th scope="col">Opciones</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>
+                                                                        Nombre del Servicio
+                                                                    </td>
+                                                                    <td>
+                                                                        <img class="rounded"
+                                                                            src="../assets/img/products/chrome-book-14.jpg"
+                                                                            alt="Responsive image" height="150"
+                                                                            width="150">
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <label>Distrito</label>
+                                                                        <p class="">Lima</p>
+                                                                        <label>Dirección</label>
+                                                                        <p class="">Av.Brasil 678 </p>
+                                                                        <label>Descripción</label>
+                                                                        <p class=""> The original iPhone introduced
+                                                                            the world to Multi-Touch, forever
+                                                                            changing the way people experience
+                                                                            technology. With 3D Touch, you can do
+                                                                            things that were never possible before.
+                                                                            It senses how deeply you press the
+                                                                            display, letting you do all kinds of
+                                                                            essential things more quickly and
+                                                                            simply. And it gives you real-time
+                                                                            feedback in the form of subtle taps from
+                                                                            the all-new Taptic Engine.</p>
+                                                                        <label>Telefono</label>
+                                                                        <p class="">987654321</p>
+                                                                        <label>Precio</label>
+                                                                        <p class="price">$199.99</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group row mt-2">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary my-2">Modificar</button>
+
+                                                                        </div>
+                                                                        <div class="form-group row  mt-2">
+
+                                                                            <button type="reset"
+                                                                                class="btn btn-danger my-2"><i class="ion-trash-b"></i> Eliminar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td>
+                                                                        Nombre del Servicio
+                                                                    </td>
+                                                                    <td>
+                                                                        <img class="rounded"
+                                                                            src="../assets/img/products/chrome-book-14.jpg"
+                                                                            alt="Responsive image" height="150"
+                                                                            width="150">
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <label>Distrito</label>
+                                                                        <p class="">Lima</p>
+                                                                        <label>Dirección</label>
+                                                                        <p class="">Av.Brasil 678 </p>
+                                                                        <label>Descripción</label>
+                                                                        <p class=""> The original iPhone introduced
+                                                                            the world to Multi-Touch, forever
+                                                                            changing the way people experience
+                                                                            technology. With 3D Touch, you can do
+                                                                            things that were never possible before.
+                                                                            It senses how deeply you press the
+                                                                            display, letting you do all kinds of
+                                                                            essential things more quickly and
+                                                                            simply. And it gives you real-time
+                                                                            feedback in the form of subtle taps from
+                                                                            the all-new Taptic Engine.</p>
+                                                                        <label>Telefono</label>
+                                                                        <p class="">987654321</p>
+                                                                        <label>Precio</label>
+                                                                        <p class="price">$199.99</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group row mt-2">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary my-2">Modificar</button>
+
+                                                                        </div>
+                                                                        <div class="form-group row  mt-2">
+
+                                                                            <button type="reset"
+                                                                                class="btn btn-danger my-2"><i class="ion-trash-b"></i> Eliminar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td>
+                                                                        Nombre del Servicio
+                                                                    </td>
+                                                                    <td>
+                                                                        <img class="rounded"
+                                                                            src="../assets/img/products/chrome-book-14.jpg"
+                                                                            alt="Responsive image" height="150"
+                                                                            width="150">
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <label>Distrito</label>
+                                                                        <p class="">Lima</p>
+                                                                        <label>Dirección</label>
+                                                                        <p class="">Av.Brasil 678 </p>
+                                                                        <label>Descripción</label>
+                                                                        <p class=""> The original iPhone introduced
+                                                                            the world to Multi-Touch, forever
+                                                                            changing the way people experience
+                                                                            technology. With 3D Touch, you can do
+                                                                            things that were never possible before.
+                                                                            It senses how deeply you press the
+                                                                            display, letting you do all kinds of
+                                                                            essential things more quickly and
+                                                                            simply. And it gives you real-time
+                                                                            feedback in the form of subtle taps from
+                                                                            the all-new Taptic Engine.</p>
+                                                                        <label>Telefono</label>
+                                                                        <p class="">987654321</p>
+                                                                        <label>Precio</label>
+                                                                        <p class="price">$199.99</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group row mt-2">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary my-2">Modificar</button>
+
+                                                                        </div>
+                                                                        <div class="form-group row  mt-2">
+
+                                                                            <button type="reset"
+                                                                                class="btn btn-danger my-2"><i class="ion-trash-b"></i> Eliminar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- PUBLICAR SERVICIO-->
+                                        <div class="tab-pane" id="agregar_servicio">
+                                            <form class="form-horizontal">
+                                                <div class="form-group row">
+                                                    <label for="inputName"
+                                                        class="col-sm-2 col-form-label">Servicio</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputName"
+                                                            placeholder="Nombre del Servicio">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputEspecialista"
+                                                        class="col-sm-2 col-form-label">Especialista</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputEspecialista"
+                                                            placeholder="Nombre del Especialista">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputDistrito"
+                                                        class="col-sm-2 col-form-label">Distrito</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control" id="inputDistrito">
+                                                            <option>Lima</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputDireccion"
+                                                        class="col-sm-2 col-form-label">Dirección</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputDistrito"
+                                                            placeholder="Av.Brasil 678">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputExperience"
+                                                        class="col-sm-2 col-form-label">Descripción</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" id="inputExperience"
+                                                            placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Telefono</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputSkills"
+                                                            placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Precio</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="number" id="inputSpentBudget" class="form-control"
+                                                            value="200" step="1">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Imagen</label>
+                                                    <div class="col-sm-10">
+                                                        <input name="file-input" id="file-input" type="file" src="" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="offset-sm-2 col-sm-10">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox"> I agree to the <a href="#">terms
+                                                                    and conditions</a>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+
+                                                    <div class="align-center justify-content-center">
+                                                        <div class="form-group row ">
+                                                            <div class="offset-sm-2 col-sm-10">
+                                                                <button type="submit" class="btn btn-primary">Publicar
+                                                                    Servicio</button>
+                                                                <button type="reset"
+                                                                    class="btn btn-danger">Cancelar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- /.tab-content -->
+                                </div><!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+        </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../assets/js/jquery-latest.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/catalog.js"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ui.touch-punch.js"></script>
+    <!-- iconos-->
+    <script src="https://kit.fontawesome.com/160f79963e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
