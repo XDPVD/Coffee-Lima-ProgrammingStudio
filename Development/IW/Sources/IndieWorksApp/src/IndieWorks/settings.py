@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'IndieWorks.Apps.Cliente'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,9 @@ WSGI_APPLICATION = 'IndieWorks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'IndieWorks.db',
+        'NAME': 'IndieWorks',
+        'USER': 'root',
+        'PASSWORD': 'root',
     }
 }
 
