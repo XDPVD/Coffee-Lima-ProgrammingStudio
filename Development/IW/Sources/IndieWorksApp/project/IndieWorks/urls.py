@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from IndieWorks.Apps.Cliente.views import ClienteLogin, ClienteRegistro
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('login/', ClienteLogin.login, name="login"),
+    path('registro/', ClienteRegistro.registro, name="registro"),
+    path('registro_resultado/', ClienteRegistro.procesarRegistro, name="registro_resultado")
 ]

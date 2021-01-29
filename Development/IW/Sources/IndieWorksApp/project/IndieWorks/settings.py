@@ -55,7 +55,7 @@ ROOT_URLCONF = 'IndieWorks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['IndieWorks.Apps.Cliente.templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
