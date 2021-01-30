@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*sobreescribiendo los estilos de bootstrap*/
+.bg-primary {
+  background-color: #8B2B16 !important; }
+
+.text-primary {
+  color: #8B2B16 !important; }
+
+.btn-primary {
+  background-color: #8B2B16 !important;
+  border-color: #5f1d0f !important; }
+
+.btn-primary:hover {
+  background-color: #5f1d0f !important; }
+
+.btn-primary:active {
+  background-color: #331008 !important;
+  border-color: #070201 !important; }
+
+.btn-primary:focus {
+  shadow: 0 0 0 0.2rem rgba(139, 43, 22, 0.5) !important; }
+
+/* estilos del diseño*/
+html {
+  font-size: 13px; }
+
+.card:hover {
+  box-shadow: 0 0 10px #0000006b; }
+
+.servicios {
+  border: 1px solid green;
+  height: 100px; }
+
+.servicios > * {
+  border: solid red; }
+
+p {
+  display: inline-flex; }
+
+.primary {
+  color: #8B2B16; }
+
+/*# sourceMappingURL=estilos.css.map */
