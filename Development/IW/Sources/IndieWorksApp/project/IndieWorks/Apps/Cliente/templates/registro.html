@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Registro</title>
 </head>
 <body>
 
@@ -11,12 +11,12 @@
     <form method="POST" action="{% url 'registro_resultado' %}">
         {% csrf_token %}
         {% if mensaje %}
-            <h1>¡Registro exitoso!</h1>
+            <h1>¡Registro rechazado!</h1>
         {% endif %}
 
         <div class="form-group">
             {{cliente.nombre.label}}
-            <input name="nombre" type="text" required {{ cliente.nombre.value }}>
+            <input name="nombre" type="text" required {{cliente.nombre.value}}>
         </div>
         <div class="form-group">
             {{cliente.apellido_paterno.label}}
@@ -43,11 +43,18 @@
             <input name="distrito" type="text" required {{cliente.distrito.value}}>
         </div>
         <div class="form-group">
-            {{user.password.label}}
-            <input name="password" type="password" required {{user.password.value}}>
+            {{user.password1.label}}
+            <input name="password1" type="password" required {{user.password1.value}}>
+        </div>
+        <div class="form-group">
+            {{user.password2.label}}
+            <input name="password2" type="password" required {{user.password2.value}}>
         </div>
         <button type="submit">Registrarse</button>
     </form>
 
+    <div>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">¡Inicia sesión!</a></p>
+    </div>
 </body>
 </html>
