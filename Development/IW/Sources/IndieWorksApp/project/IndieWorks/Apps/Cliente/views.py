@@ -6,13 +6,14 @@ from django.shortcuts import render, redirect
 
 from IndieWorks.Apps.Cliente.forms import ClienteForm, ClienteUserForm
 
+
 # Create your views here.
 
 
 class ClienteLogin(HttpRequest):
 
     def login(request):
-        return render(request, "login.html")
+        return render(request, "Login.html")
 
     def autenticarLogin(request):
         if request.method == 'POST':
@@ -25,7 +26,7 @@ class ClienteLogin(HttpRequest):
                 login(request, user)
                 return redirect("inicio")
 
-        return render(request, "login.html")
+        return render(request, "Login.html")
 
 
 class ClienteRegistro(HttpRequest):
@@ -34,7 +35,7 @@ class ClienteRegistro(HttpRequest):
         cliente_form = ClienteForm()
         cliente_user_form = ClienteUserForm()
         diccionario = {"cliente": cliente_form, "user": cliente_user_form}
-        return render(request, "registro.html", diccionario)
+        return render(request, "RegistroCliente.html", diccionario)
 
     def procesarRegistro(request):
         cliente_form = ClienteForm(request.POST)
@@ -54,7 +55,10 @@ class ClienteRegistro(HttpRequest):
             if user is None:
                 user_i.save()
                 cliente_user_form.save_m2m()
+
                 cliente_i.cuenta = user_i
+                cliente_i.apellido_paterno = cliente_form.cleaned_data.get('apellido').split()[0]
+                cliente_i.apellido_materno = cliente_form.cleaned_data.get('apellido').split()[1]
                 cliente_i.save()
                 cliente_form.save_m2m()
 

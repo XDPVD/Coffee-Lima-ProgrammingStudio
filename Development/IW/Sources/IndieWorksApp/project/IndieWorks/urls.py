@@ -18,6 +18,7 @@ from django.urls import path
 
 from IndieWorks.views import Inicio
 from IndieWorks.Apps.Cliente.views import ClienteLogin, ClienteRegistro
+from IndieWorks.Apps.Trabajador.views import TrabajadorRegistro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,8 @@ urlpatterns = [
 
     path('login/', ClienteLogin.login, name="login"),
     path('login_auth/', ClienteLogin.autenticarLogin, name="login_auth"),
-    path('registro/', ClienteRegistro.registro, name="registro"),
-    path('registro_resultado/', ClienteRegistro.procesarRegistro, name="registro_resultado")
+    path('registroc/', ClienteRegistro.registro, name="cliente_registro"),
+    path('registroc_resultado/', ClienteRegistro.procesarRegistro, name="cliente_registro_resultado"),
+    path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
+    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro, name="trabajador_registro_resultado")
 ]
