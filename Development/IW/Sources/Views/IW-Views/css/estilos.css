@@ -44,3 +44,11 @@ p {
   color: #8B2B16; }
 
 /*# sourceMappingURL=estilos.css.map */
+
+
+#upload-label {
+  position:fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(+50%);
+}
