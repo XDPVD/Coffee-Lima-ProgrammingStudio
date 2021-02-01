@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+</head>
+<body>
+
+    <h1>Registro</h1>
+
+    <form method="POST" action="{% url 'registro_resultado' %}">
+        {% csrf_token %}
+        {% if mensaje %}
+            <h1>¡Registro rechazado!</h1>
+        {% endif %}
+
+        <div class="form-group">
+            {{cliente.nombre.label}}
+            <input name="nombre" type="text" required {{cliente.nombre.value}}>
+        </div>
+        <div class="form-group">
+            <{{cliente.apellido.label}}>
+            <input name="apellido" type="text" required {{cliente.apellido.value}}>
+        </div>
+        <!--<div class="form-group">
+            {{cliente.apellido_paterno.label}}
+            <input name="apellido_paterno" type="text" required {{cliente.apellido_paterno.value}}>
+        </div>
+        <div class="form-group">
+            {{cliente.apellido_materno.label}}
+            <input name="apellido_materno" type="text" required {{cliente.apellido_materno.value}}>
+        </div>-->
+        <div class="form-group">
+            {{cliente.dni.label}}
+            <input name="dni" type="text" required {{cliente.dni.value}}>
+        </div>
+        <div class="form-group">
+            {{cliente.correo.label}}
+            <input name="correo" type="text" required {{cliente.correo.value}}>
+        </div>
+        <div class="form-group">
+            {{cliente.telefono.label}}
+            <input name="telefono" type="text" required {{cliente.telefono.value}}>
+        </div>
+        <div class="form-group">
+            {{cliente.distrito.label}}
+            <input name="distrito" type="text" required {{cliente.distrito.value}}>
+        </div>
+        <div class="form-group">
+            {{user.password1.label}}
+            <input name="password1" type="password" required {{user.password1.value}}>
+        </div>
+        <div class="form-group">
+            {{user.password2.label}}
+            <input name="password2" type="password" required {{user.password2.value}}>
+        </div>
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <div>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">¡Inicia sesión!</a></p>
+    </div>
+</body>
+</html>
