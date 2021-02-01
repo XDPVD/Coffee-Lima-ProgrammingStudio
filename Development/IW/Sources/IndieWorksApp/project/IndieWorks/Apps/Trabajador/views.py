@@ -12,10 +12,13 @@ from IndieWorks.Apps.Trabajador.forms import TrabajadorForm, TrabajadorUserForm
 class TrabajadorRegistro(HttpRequest):
 
     def registro(request):
-        trabajador_form = TrabajadorForm()
-        trabajador_user_form = TrabajadorUserForm()
-        diccionario = {"trabajador": trabajador_form, "user": trabajador_user_form}
-        return render(request, "RegistroTrabajador.html", diccionario)
+        if request.user.is_authenticated:
+            return redirect('inicio')
+        else:
+            trabajador_form = TrabajadorForm()
+            trabajador_user_form = TrabajadorUserForm()
+            diccionario = {"trabajador": trabajador_form, "user": trabajador_user_form}
+            return render(request, "RegistroTrabajador.html", diccionario)
 
     def procesarRegistro(request):
         trabajador_form = TrabajadorForm(request.POST)
