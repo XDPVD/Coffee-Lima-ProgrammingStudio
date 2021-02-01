@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/estilos.css" />
+    <title>IndieWorks Especialistas</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
+        <a class="navbar-brand" href="#">IndieWorks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trabajadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nosotros</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Correo del usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Buscar Especialistas</a>
+                        <a class="dropdown-item" href="#">Buscar Trabajos</a>
+                        <a class="dropdown-item" href="#">Publicar Servicio</a>
+                        <a class="dropdown-item" href="#">Configuración</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center pb-4">Publica tu servicio</h1>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-5 mx-auto">
+                <div class="row">
+                    <!-- Uploaded image area-->
+                    <div class="image-area mt-4 border rounded mb-3 mx-auto"><img id="imageResult"
+                            src="../images/picture_icon.png" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"
+                            style="width:450px;height:350px">
+                    </div>
+                </div>
+
+                <!-- Upload image input-->
+                <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted"></label>
+                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+
+                    <div class="input-group-append">
+                        <label id="upload-label" for="upload" class="font-weight-light text-muted"></label>
+                       <!--
+                           <label for="upload" class="btn btn-light m-0 rounded-pill px-4 float-left"> <i
+                                class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                                class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                       --> 
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-7 mx-auto">
+                <form class="form-horizontal py-4">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Servicio</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nombre del Servicio">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Especialista</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nombre del Especialista">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Distrito</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option>Lima</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Dirección</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Av.Brasil 678">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Descripción</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Telefono</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Precio</label>
+                        <div class="col-sm-10">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">S/.</span>
+                                </div>
+                                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="mx-auto">
+                    <div class="form-group row text-center align-self-center ">
+                        <div class="offset-sm-1 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Publicar</button>
+                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="text-center bg-dark text-light py-1 mt-auto">
+        <p>Copyright © 2020 Todos los derechos reservados</p>
+    </footer>
+
+
+
+    <script type="text/javascript">
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imageResult')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(function () {
+            $('#upload').on('change', function () {
+                readURL(input);
+            });
+        });
+
+        var input = document.getElementById('upload');
+        var infoArea = document.getElementById('upload-label');
+
+        input.addEventListener('change', showFileName);
+        function showFileName(event) {
+            var input = event.srcElement;
+            var fileName = input.files[0].name;
+            infoArea.textContent = 'File name: ' + fileName;
+        }
+
+
+
+       </script>
+
+    <script src="https://kit.fontawesome.com/160f79963e.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

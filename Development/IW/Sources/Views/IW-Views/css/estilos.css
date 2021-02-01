@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/*sobreescribiendo los estilos de bootstrap*/
+.bg-primary {
+  background-color: #7e67e6 !important; }
+
+.text-primary {
+  color: #7e67e6 !important; }
+
+.btn-primary {
+  background-color: #7e67e6 !important;
+  border-color: #593bdf !important; }
+
+.btn-primary:hover {
+  background-color: #593bdf !important; }
+
+.btn-primary:active {
+  background-color: #3f21c6 !important;
+  border-color: #31199b !important; }
+
+.btn-primary:focus {
+  shadow: 0 0 0 0.2rem rgba(126, 103, 230, 0.5) !important; }
+
+/* estilos del diseño*/
+html {
+  font-size: 16px; }
+
+.card:hover {
+  -webkit-box-shadow: 0 0 10px #0000006b;
+          box-shadow: 0 0 10px #0000006b; }
+
+.servicios {
+  border: 1px solid green;
+  height: 100px; }
+
+.servicios > * {
+  border: solid red; }
+
+p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+.primary {
+  color: #8B2B16; }
+
+/*# sourceMappingURL=estilos.css.map */
+
+
+#upload-label {
+  position:fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(+50%);
+}
