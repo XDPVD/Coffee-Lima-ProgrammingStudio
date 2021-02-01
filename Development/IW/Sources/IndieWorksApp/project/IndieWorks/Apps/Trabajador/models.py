@@ -3,7 +3,10 @@ from django.core.validators import MinLengthValidator
 from django.db import models
 
 
-class Cliente(models.Model):
+# Create your models here.
+
+
+class Trabajador(models.Model):
     cuenta = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     nombre = models.CharField(max_length=35)
     apellido_paterno = models.CharField(max_length=15)
@@ -11,7 +14,7 @@ class Cliente(models.Model):
     dni = models.CharField(validators=[MinLengthValidator(8)], max_length=8)
     correo = models.CharField(max_length=30)
     telefono = models.CharField(validators=[MinLengthValidator(7)], max_length=9)
-    rating = models.FloatField(default=0)
+    ruc = models.CharField(validators=[MinLengthValidator(10)], max_length=10)
     distrito = models.CharField(max_length=20)
 
     def NombreCompleto(self):

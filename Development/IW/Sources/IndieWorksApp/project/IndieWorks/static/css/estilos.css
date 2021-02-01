@@ -25,7 +25,8 @@ html {
   font-size: 16px; }
 
 .card:hover {
-  box-shadow: 0 0 10px #0000006b; }
+  -webkit-box-shadow: 0 0 10px #0000006b;
+          box-shadow: 0 0 10px #0000006b; }
 
 .servicios {
   border: 1px solid green;
@@ -35,6 +36,8 @@ html {
   border: solid red; }
 
 p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex; }
 
 .primary {
