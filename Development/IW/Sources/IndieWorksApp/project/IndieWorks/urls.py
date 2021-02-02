@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import Inicio
-from .Apps.Cliente.views import ClienteLogin, ClienteRegistro
-from .Apps.Trabajador.views import TrabajadorRegistro, busquedaTrabInd, detalleTrabajador
+from .Apps.Cliente.views import ClienteRegistro
+from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
+from .views import Login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,14 +34,9 @@ urlpatterns = [
     path('registroc_resultado/', ClienteRegistro.procesarRegistro,
          name="cliente_registro_resultado"),
     path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
-    << << << < HEAD
     path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
          name="trabajador_registro_resultado"),
 
     path('busqueda/', busquedaTrabInd, name="lista-trabajadores"),
     path('trabajador/<int:id>', detalleTrabajador, name="detalle-trabajador"),
-    == == == =
-    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
-         name="trabajador_registro_resultado")
-    >> >>>> > edwinAguilar
 ]
