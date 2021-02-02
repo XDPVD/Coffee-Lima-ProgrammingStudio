@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'IndieWorks.Apps.Cliente',
-    'IndieWorks.Apps.Trabajador'
+    'IndieWorks.Apps.Trabajador',
+    'IndieWorks.Apps.Post'
 ]
 
 MIDDLEWARE = [
