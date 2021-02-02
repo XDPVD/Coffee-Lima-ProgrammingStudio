@@ -54,6 +54,11 @@
                     y {% endif %} para cerrarlo, la lógica no te interesa, solo ten en cuenta que cuando falle el registro va a saltar lo
                     que sea que esté en esa condicional. Hazlo emergente, haz que salga debajo de un div, me viene y me va
                 -->
+                {% if message %}
+                <div class="alert alert-danger" role="alert">
+                    ¡Alerta! Error en los campos ingresados
+                </div>
+                {% endif %}
                 <form method="POST" action="{% url 'cliente_registro_resultado' %}">
                     {% csrf_token %}
 
