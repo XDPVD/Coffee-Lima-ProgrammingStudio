@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from IndieWorks.views import Inicio
-from IndieWorks.Apps.Cliente.views import ClienteLogin, ClienteRegistro
+from IndieWorks.views import Inicio, Login
+from IndieWorks.Apps.Cliente.views import ClienteRegistro
 from IndieWorks.Apps.Trabajador.views import TrabajadorRegistro
 
 urlpatterns = [
@@ -25,8 +25,10 @@ urlpatterns = [
 
     path('inicio/', Inicio.index, name="inicio"),
 
-    path('login/', ClienteLogin.login, name="login"),
-    path('login_auth/', ClienteLogin.autenticarLogin, name="login_auth"),
+    path('login/', Login.loginUser, name="login"),
+    path('login_auth/', Login.autenticarLogin, name="login_auth"),
+    path('logout/', Login.logoutUser, name="logout"),
+
     path('registroc/', ClienteRegistro.registro, name="cliente_registro"),
     path('registroc_resultado/', ClienteRegistro.procesarRegistro, name="cliente_registro_resultado"),
     path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
