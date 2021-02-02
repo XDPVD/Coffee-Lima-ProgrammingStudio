@@ -16,15 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-<<<<<<< HEAD
-from IndieWorks.views import Inicio, Login
-from IndieWorks.Apps.Cliente.views import ClienteRegistro
-from IndieWorks.Apps.Trabajador.views import TrabajadorRegistro
-=======
 from .views import Inicio
 from .Apps.Cliente.views import ClienteLogin, ClienteRegistro
 from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
->>>>>>> diegoVilca
 
 urlpatterns = [
     path('admin/', admin.site.urls),
