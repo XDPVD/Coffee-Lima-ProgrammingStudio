@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <form method="POST" action="/busqueda/"> {% csrf_token %}
+        <label>Barra de busqueda</label>
+        <input type="text" name="fname">
+        <input type="submit" value="Enviar">
+    </form>
+    <h1>Inicio</h1>
+    <form action="{% url 'logout' %}">
+        <button type="submit">Salir</button>
+    </form>
+</body>
+</html>

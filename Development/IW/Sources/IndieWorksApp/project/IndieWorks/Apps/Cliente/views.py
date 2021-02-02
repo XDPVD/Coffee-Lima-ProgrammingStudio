@@ -1,5 +1,4 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
@@ -10,32 +9,16 @@ from IndieWorks.Apps.Cliente.forms import ClienteForm, ClienteUserForm
 # Create your views here.
 
 
-class ClienteLogin(HttpRequest):
-
-    def login(request):
-        return render(request, "Login.html")
-
-    def autenticarLogin(request):
-        if request.method == 'POST':
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
-                login(request, user)
-                return redirect("inicio")
-
-        return render(request, "Login.html")
-
-
 class ClienteRegistro(HttpRequest):
 
     def registro(request):
-        cliente_form = ClienteForm()
-        cliente_user_form = ClienteUserForm()
-        diccionario = {"cliente": cliente_form, "user": cliente_user_form}
-        return render(request, "RegistroCliente.html", diccionario)
+        if request.user.is_authenticated:
+            return redirect('inicio')
+        else:
+            cliente_form = ClienteForm()
+            cliente_user_form = ClienteUserForm()
+            diccionario = {"cliente": cliente_form, "user": cliente_user_form}
+            return render(request, "RegistroCliente.html", diccionario)
 
     def procesarRegistro(request):
         cliente_form = ClienteForm(request.POST)
@@ -69,4 +52,4 @@ class ClienteRegistro(HttpRequest):
             cliente_user_form = ClienteUserForm()
 
         diccionario = {"cliente": cliente_form, "user": cliente_user_form, "mensaje": mensaje}
-        return render(request, "registro.html", diccionario)
+        return render(request, "RegistroCliente.html", diccionario)
