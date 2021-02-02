@@ -52,4 +52,4 @@ class ClienteRegistro(HttpRequest):
             cliente_user_form = ClienteUserForm()
 
         diccionario = {"cliente": cliente_form, "user": cliente_user_form, "mensaje": mensaje}
-        return render(request, "registro.html", diccionario)
+        return render(request, "RegistroCliente.html", diccionario)
