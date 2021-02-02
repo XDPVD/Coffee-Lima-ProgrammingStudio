@@ -28,7 +28,10 @@ urlpatterns = [
     path('login/', ClienteLogin.login, name="login"),
     path('login_auth/', ClienteLogin.autenticarLogin, name="login_auth"),
     path('registroc/', ClienteRegistro.registro, name="cliente_registro"),
-    path('registroc_resultado/', ClienteRegistro.procesarRegistro, name="cliente_registro_resultado"),
+    path('registroc_resultado/', ClienteRegistro.procesarRegistro,
+         name="cliente_registro_resultado"),
     path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
-    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro, name="trabajador_registro_resultado")
+    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
+         name="trabajador_registro_resultado")
+    path('mostrar_ti/', )
 ]
