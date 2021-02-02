@@ -2,7 +2,8 @@
 /*sobreescribiendo los estilos de bootstrap*/
 .bg-primary {
   background-color: #7e67e6 !important; }
-
+.bg-default{
+  background-color: #ffffff !important; }
 .text-primary {
   color: #7e67e6 !important; }
 
