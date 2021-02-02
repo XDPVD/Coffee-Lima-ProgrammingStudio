@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
-from IndieWorks.Apps.Cliente.forms import ClienteForm, ClienteUserForm
+from .forms import ClienteForm, ClienteUserForm
 
 
 # Create your views here.

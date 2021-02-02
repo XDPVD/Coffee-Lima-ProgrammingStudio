@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import Inicio
-from .Apps.Cliente.views import ClienteLogin, ClienteRegistro
+from .Apps.Cliente.views import ClienteRegistro
 from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
+from .views import Login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
