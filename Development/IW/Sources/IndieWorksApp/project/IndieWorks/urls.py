@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+<<<<<<< HEAD
 from IndieWorks.views import Inicio, Login
 from IndieWorks.Apps.Cliente.views import ClienteRegistro
 from IndieWorks.Apps.Trabajador.views import TrabajadorRegistro
+=======
+from .views import Inicio
+from .Apps.Cliente.views import ClienteLogin, ClienteRegistro
+from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
+>>>>>>> diegoVilca
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,5 +38,8 @@ urlpatterns = [
     path('registroc/', ClienteRegistro.registro, name="cliente_registro"),
     path('registroc_resultado/', ClienteRegistro.procesarRegistro, name="cliente_registro_resultado"),
     path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
-    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro, name="trabajador_registro_resultado")
+    path('registrot_resultado/', TrabajadorRegistro.procesarRegistro, name="trabajador_registro_resultado"),
+
+    path('busqueda/',busquedaTrabInd, name="lista-trabajadores"),
+    path('trabajador/<int:id>',detalleTrabajador, name="detalle-trabajador"),
 ]

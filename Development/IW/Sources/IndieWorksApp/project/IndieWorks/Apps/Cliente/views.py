@@ -53,3 +53,8 @@ class ClienteRegistro(HttpRequest):
 
         diccionario = {"cliente": cliente_form, "user": cliente_user_form, "mensaje": mensaje}
         return render(request, "RegistroCliente.html", diccionario)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> diegoVilca
