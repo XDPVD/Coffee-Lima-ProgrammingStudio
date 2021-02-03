@@ -6,7 +6,11 @@ from django.shortcuts import render, redirect
 
 from IndieWorks.Apps.Servicio.models import Servicio
 from IndieWorks.Apps.Servicio.forms import ServicioForm
+from IndieWorks.Apps.Servicio.models import Servicio
 from IndieWorks.Apps.Trabajador.models import Trabajador
+from django.db.models import Q
+from operator import or_
+from functools import reduce
 
 
 # Create your views here.
@@ -64,3 +68,15 @@ class ServicioControlador(HttpRequest):
 
             diccionario = {"servicio": servicio_form, "mensaje": mensaje}
         return render(request, "PublicarServicio.html", diccionario)
+
+    def buscarServicio(request):
+        if request.method == 'GET':
+            return render(request, "Servicios.html")
+
+        elif request.method == 'POST':
+            servicio = request.POST.get('servicio')
+            servicio_split = servicio.split()
+            reduce_query = reduce(
+                or_, (Q(nombre__icontains=x) for x in servicio_split))
+            servicios = Servicio.objects.filter(reduce_query)
+            return render(request, "Servicios.html", {'servicios': servicios})

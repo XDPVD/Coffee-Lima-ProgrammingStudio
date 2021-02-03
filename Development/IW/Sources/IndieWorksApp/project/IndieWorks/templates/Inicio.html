@@ -30,13 +30,13 @@
                 </button>
                 <a class="navbar-brand " href="../">
                     <i class="ion-cube"></i> IndieWorks</a>
-                <form class="navbar-brand form-group bd-search d-flex align-items-center" method="POST" action="/busqueda/"> {% csrf_token %}
+                <form class="navbar-brand form-group bd-search d-flex align-items-center" method="POST" action="/servicios/"> {% csrf_token %}
                     <div class="input-group sm-6 mb-3">
-                        <input type="text" class="form-control" name="fname" placeholder="Search" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="servicio" placeholder="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <span class="fa fa-search form-control-feedback btn btn-light" id="basic-addon2"></span>
                         </div>
-                        <input type="submit" value="Search">
+                        <input type="submit">
                     </div>
                 </form>
         <!--/.container-fluid -->
