@@ -19,14 +19,14 @@
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
-        <a class="navbar-brand" href="#"><img src="../images/favicon1.png" alt="logo">IndieWorks</a>
+        <a class="navbar-brand" href="#"><img src="{% static 'images/favicon1.png' %}" alt="logo">IndieWorks</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active disabled" href="#">Servicios</a>
@@ -42,7 +42,7 @@
                 <!--Ya autenticado como trabajador-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Correo del trabajador
+                      {{usuario.nombre}} {{usuario.apellido_paterno}}
                   </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item active disabled" href="#">Mis Servicios</a>

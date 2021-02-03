@@ -23,7 +23,7 @@ class ServicioControlador(HttpRequest):
             return redirect("inicio")
         else:
             servicios = Servicio.objects.filter(trabajador_id=trabajador.id)
-            diccionario = {"servicios": servicios}
+            diccionario = {"servicios": servicios, "usuario": trabajador}
 
         return render(request, "MisServicios.html", diccionario)
 
@@ -36,7 +36,7 @@ class ServicioControlador(HttpRequest):
             return redirect("inicio")
         else:
             servicio_form = ServicioForm()
-            diccionario = {"servicio": servicio_form}
+            diccionario = {"servicio": servicio_form, "usuario": trabajador}
         return render(request, "PublicarServicio.html", diccionario)
 
     @login_required(login_url='login')
