@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 from django.db import models
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,3 +23,7 @@ class Trabajador(models.Model):
 
     def __str__(self):
         return self.NombreCompleto()
+
+    def get_absolute_url(self):
+        return reverse("detalle-trabajador", kwargs={"id": self.id})
+    

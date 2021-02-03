@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'IndieWorks.Apps.Cliente',
-    'IndieWorks.Apps.Trabajador'
+    'IndieWorks.Apps.Trabajador',
+    'IndieWorks.Apps.Servicio'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,6 @@ DATABASES = {
         'PASSWORD': 'root',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
