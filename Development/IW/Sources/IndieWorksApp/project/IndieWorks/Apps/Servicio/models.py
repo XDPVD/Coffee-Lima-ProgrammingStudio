@@ -11,7 +11,7 @@ from IndieWorks.Apps.Trabajador.models import Trabajador
 class Servicio(models.Model):
     nombre = models.CharField(max_length=40, null=False)
     cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE, null=True, blank=True)
-    trabajador = models.OneToOneField(Trabajador, on_delete=models.CASCADE, null=False, blank=False)
+    trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE, null=False, blank=False)
     distrito = models.CharField(max_length=20, null=False)
     direccion = models.CharField(max_length=50)
     descripcion = models.TextField()
