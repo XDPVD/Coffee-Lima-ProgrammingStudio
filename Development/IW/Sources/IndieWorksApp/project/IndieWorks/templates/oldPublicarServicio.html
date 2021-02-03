@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publicar Servicio</title>
+</head>
+<body>
+    <h1>Publicar Servicio Nuevo</h1>
+
+    {% if mensaje == "OK" %}
+        <h2>Servicio publicado</h2>
+    {% elif mensaje == "NOT OK" %}
+        <h2>Error</h2>
+    {% endif %}
+
+    <div>
+        <form method="POST" action="{% url 'procesar_servicio' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                {{servicio.nombre.label}}
+                <input name="nombre" type="text" required {{servicio.nombre.value}}>
+            </div>
+            <div class="form-group">
+                {{servicio.categoria.label}}
+                <input name="categoria" type="text" required {{servicio.categoria.value}}>
+            </div>
+            <div class="form-group">
+                {{servicio.distrito.label}}
+                <input name="distrito" type="text" required {{servicio.distrito.value}}>
+            </div>
+            <div class="form-group">
+                {{servicio.direccion.label}}
+                <input name="direccion" type="text" {{servicio.direccion.value}}>
+            </div>
+            <div class="form-group">
+                {{servicio.descripcion.label}}
+                <textarea name="descripcion" class="form-control" type="text" {{servicio.descripcion.value}}></textarea>
+            </div>
+            <div class="form-group">
+                {{servicio.telefono.label}}
+                <input name="telefono" type="text" required {{servicio.telefono.value}}>
+            </div>
+            <div class="form-group">
+                {{servicio.precio.label}}
+                <input name="precio" type="number" required {{servicio.precio.value}}>
+            </div>
+            <button type="submit">Publicar</button>
+        </form>
+    </div>
+    <div>
+        <form action="{% url 'mis_servicios' %}">
+            <button type="submit">Cancelar</button>
+        </form>
+    </div>
+</body>
+</html>

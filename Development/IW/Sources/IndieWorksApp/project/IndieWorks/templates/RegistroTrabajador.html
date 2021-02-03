@@ -2,45 +2,54 @@
 <html lang="es">
 
 <head>
+    {% load static %}
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- Bootstrap CSS -->
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/ionicons.css' %}" rel="stylesheet">
+
     <!-- Custom CSS -->
-    {% load static %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}" />
-    <title>IndieWorks Registro Trabajador</title>
+    <title>Registro Trabajador</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
-        <a class="navbar-brand" href="#">IndieWorks</a>
+<a class="navbar-brand" href="#"><img src="{% static 'images/favicon1.png' %}" alt="logo">IndieWorks</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link active disabled" href="{% url 'inicio' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Especialistas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Nosotros</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <!--No autenticado-->
                 <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+                    <a class="nav-link " href="{% url 'login' %}"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="{% url 'cliente_registro' %}">Registrarse como Cliente</a>
+                    <a class="nav-link " href="{% url 'registro' %}">Registrarse</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Registrarse como Trabajador</a>
             </ul>
         </div>
     </nav>
@@ -50,7 +59,7 @@
             <div class="col">
                 <h1 class="text-center pb-4">Registrar perfil de Trabajador</h1>
 
-                {% if mensaje %}
+{% if mensaje %}
                 <div class="alert alert-danger" role="alert">
                     ¡Alerta! Error en los campos ingresados
                 </div>
@@ -89,8 +98,14 @@
                                 <input type="password" name="password2" value="" placeholder="Confirmar contraseña" required="" class="form-control" {{user.password2.value}} /><br />
                             </div>
                             <div class="col-sm-12">
-                                <p>• La contraseña debe de contar con al menos 8 caracteres.</p>
+                                <p>• La contraseña debe de contar con al menos 9 caracteres.</p>
                                 <p>• Debe de incluir letras y números en su contraseña.</p>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <div class="col-sm-12 text-center">
+                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                  Registrarse
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -98,10 +113,6 @@
 
                     <!-- <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Guardar Modificación</button>-->
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Registrarse
-                      </button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -128,7 +139,6 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="xs-margin">Cancelar ></a>
 
                     <p>
                         Una vez registrado podrás modificar tu información cuando lo desees a través de las preferencias de usuario
@@ -140,13 +150,9 @@
         </div>
     </div>
 
-
     <footer class="text-center bg-dark text-light py-1 mt-auto">
         <p>Copyright © 2020 Todos los derechos reservados</p>
     </footer>
-
-
-
 
 
     <script src="https://kit.fontawesome.com/160f79963e.js" crossorigin="anonymous"></script>
