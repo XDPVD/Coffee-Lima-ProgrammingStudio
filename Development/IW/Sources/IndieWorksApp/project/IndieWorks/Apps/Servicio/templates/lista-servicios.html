@@ -50,28 +50,28 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Especialistas</h1>
+                <h1 class="text-center">Servicios</h1>
                 <form class="input-group mb-3" method="POST" action="/busqueda/"> {% csrf_token %}
-                    <input type="text" class="form-control" name="fname" value="{{nombreBuscAnterior}}" placeholder="Busque el trabajador que necesita" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" name="servicio" placeholder="Busque el trabajador que necesita" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search align-self-center mr-2"></i>Buscar</button>
                     </div>
                 </form>
-                <h3 class="text-secondary">Trabajadores cerca a usted</h2>
+                <h3 class="text-secondary">Servicios disponibles</h3>
             </div>
             <section class="col-12 border rounded d-md-flex d-block mb-4 navbar-nav-scroll">
                 <div class="container">
                     <div class="row">
 
-                        {% for trabajador in listaTrabajadores %}
+                        {% for servicio in servicios %}
                         <div class="col-md-4 col-sm-6">
                             <div class="card mx-auto my-4" style="width: 16rem;">
                                 <img src="../static/images/favicon.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ trabajador.NombreCompleto }}</h5>
-                                    <p class="card-text">{{ trabajador.correo }}</p>
-                                    <p class="card-text">{{ trabajador.distrito }}</p>
-                                    <a href="{{ trabajador.get_absolute_url }}" class="btn btn-primary">Más información</a>
+                                    <h5 class="card-title">{{ servicio.nombre }}</h5>
+                                    <p class="card-text">{{ servicio.descripcion }}</p>
+                                    <p class="card-text">{{ servicio.categoria }}</p>
+                                    <a href="#" class="btn btn-primary">Más información</a>
                                 </div>
                             </div>
                         </div>

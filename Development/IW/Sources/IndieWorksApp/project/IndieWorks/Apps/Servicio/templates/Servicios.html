@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="/inicio/">Inicio</a>
+                    <a class="nav-link" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Servicios</a>
@@ -37,8 +37,8 @@
                       Correo del usuario
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Buscar Especialistas</a>
-                        <a class="dropdown-item" href="#">Buscar Trabajos</a>
+                        <a class="dropdown-item" href="../servicios/MisServicios.html">Mis Servicios</a>
+                        <a class="dropdown-item" href="../servicios/PublicarServicio.html">Publicar Servicio</a>
                         <a class="dropdown-item" href="#">Configuración</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Cerrar Sesión</a>
@@ -50,32 +50,40 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Especialistas</h1>
-                <form class="input-group mb-3" method="POST" action="/busqueda/"> {% csrf_token %}
-                    <input type="text" class="form-control" name="fname" value="{{nombreBuscAnterior}}" placeholder="Busque el trabajador que necesita" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <h1 class="text-center">Servicios</h1>
+                <form class="input-group mb-3" action="/servicios/" method="POST"> {% csrf_token %}
+                    <input type="text" class="form-control" name="servicio" placeholder="Busque el servicio que necesite" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search align-self-center mr-2"></i>Buscar</button>
                     </div>
                 </form>
-                <h3 class="text-secondary">Trabajadores cerca a usted</h2>
+                <h3 class="text-secondary">Servicios disponibles</h2>
             </div>
             <section class="col-12 border rounded d-md-flex d-block mb-4 navbar-nav-scroll">
                 <div class="container">
                     <div class="row">
 
-                        {% for trabajador in listaTrabajadores %}
+                        {% for servicio in servicios %}
                         <div class="col-md-4 col-sm-6">
-                            <div class="card mx-auto my-4" style="width: 16rem;">
-                                <img src="../static/images/favicon.png" class="card-img-top" alt="...">
+                            <div class="card mx-auto my-4" style="width: 20rem;">
+                                <img src="../images/carpintero.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ trabajador.NombreCompleto }}</h5>
-                                    <p class="card-text">{{ trabajador.correo }}</p>
-                                    <p class="card-text">{{ trabajador.distrito }}</p>
-                                    <a href="{{ trabajador.get_absolute_url }}" class="btn btn-primary">Más información</a>
+                                    <h5 class="card-title">{{servicio.nombre}}</h5>
+                                    <dl class="row">
+                                        <dt class="col-5">Descripción</dt>
+                                        <dd class="col-7">{{servicio.descripcion}}</dd>
+    
+                                        <dt class="col-5">Categoría</dt>
+                                        <dd class="col-7">{{servicio.categoria}}</dd>
+    
+                                        <a class="col-12" href="#" >Ver más</a>
+                                    </dl>
+                                    
+                                    <a href="#" class="btn btn-primary ">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
+                        {% endfor %} 
                     </div>
                 </div>
             </section>

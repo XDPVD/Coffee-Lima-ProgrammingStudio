@@ -18,7 +18,8 @@ from django.urls import path
 
 from .views import Inicio
 from .Apps.Cliente.views import ClienteRegistro
-from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
+from .Apps.Trabajador.views import TrabajadorRegistro, busquedaTrabInd, detalleTrabajador
+from .Apps.Servicio.views import ServicioControlador
 from .views import Login
 
 urlpatterns = [
@@ -39,4 +40,6 @@ urlpatterns = [
 
     path('busqueda/', busquedaTrabInd, name="lista-trabajadores"),
     path('trabajador/<int:id>', detalleTrabajador, name="detalle-trabajador"),
+
+    path('servicios/', ServicioControlador.buscarServicio, name='lista-servicios')
 ]
