@@ -18,9 +18,10 @@ from django.urls import path
 
 from .views import Inicio, Registro, Login
 from .Apps.Cliente.views import ClienteRegistro
-from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
+from .Apps.Trabajador.views import TrabajadorRegistro, busquedaTrabInd, detalleTrabajador
 from .Apps.Servicio.views import ServicioControlador
 from .views import Login, nosotros
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -38,14 +39,15 @@ urlpatterns = [
     path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
          name="trabajador_registro_resultado"),
 
+    # path('servicios/', ServicioControlador.servicios, name="servicios"),
     path('mis_servicios/', ServicioControlador.misServicios, name="mis_servicios"),
     path('mis_servicios/nuevo', ServicioControlador.publicarServicio, name="nuevo_servicio"),
     path('mis_servicios/procesar', ServicioControlador.procesarServicio, name="procesar_servicio"),
 
     path('especialista/', busquedaTrabInd, name="lista-trabajadores"),
     path('especialista/<int:id>', detalleTrabajador, name="detalle-trabajador"),
-    
+
     path('servicios/', ServicioControlador.buscarServicio, name='lista-servicios'),
 
-    path('nosotros/',nosotros,name="nosotros")
+    path('nosotros/', nosotros, name="nosotros")
 ]

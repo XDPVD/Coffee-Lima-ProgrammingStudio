@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
-from IndieWorks.Apps.Servicio.models import Servicio
+from IndieWorks.Apps.Cliente.models import Cliente
 from IndieWorks.Apps.Servicio.forms import ServicioForm
 from IndieWorks.Apps.Servicio.models import Servicio
 from IndieWorks.Apps.Trabajador.models import Trabajador
@@ -71,8 +71,24 @@ class ServicioControlador(HttpRequest):
         return render(request, "PublicarServicio.html", diccionario)
 
     def buscarServicio(request):
+        conexion = ""
+        usuario = None
+
+        if request.user.is_authenticated:
+            user = User.objects.get(username=request.user.get_username())
+            trabajador = Trabajador.objects.filter(cuenta_id=user.id).first()
+
+            if trabajador is None:
+                usuario = Cliente.objects.get(cuenta_id=user.id)
+                conexion = "cliente"
+            else:
+                usuario = trabajador
+                conexion = "trabajador"
+
+        diccionario = {"conexion": conexion, "usuario": usuario}
+
         if request.method == 'GET':
-            return render(request, "Servicios.html")
+            return render(request, "Servicios.html", diccionario)
 
         elif request.method == 'POST':
             servicio = request.POST.get('servicio')
@@ -80,4 +96,5 @@ class ServicioControlador(HttpRequest):
             reduce_query = reduce(
                 or_, (Q(nombre__icontains=x) for x in servicio_split))
             servicios = Servicio.objects.filter(reduce_query)
-            return render(request, "Servicios.html", {'servicios': servicios})
+            diccionario["servicios"] = servicios
+            return render(request, "Servicios.html", diccionario)

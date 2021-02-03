@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from .models import Trabajador
 from django.shortcuts import get_object_or_404
 from .forms import TrabajadorForm, TrabajadorUserForm
+from IndieWorks.Apps.Cliente.models import Cliente
 
 # Create your views here.
 
@@ -58,49 +59,78 @@ class TrabajadorRegistro(HttpRequest):
 
 
 def busquedaTrabInd(request):
-    
+    conexion = ""
+    usuario = None
+
+    if request.user.is_authenticated:
+        user = User.objects.get(username=request.user.get_username())
+        trabajador = Trabajador.objects.filter(cuenta_id=user.id).first()
+
+        if trabajador is None:
+            usuario = Cliente.objects.get(cuenta_id=user.id)
+            conexion = "cliente"
+        else:
+            usuario = trabajador
+            conexion = "trabajador"
+
     datosForm = request.POST
     trabajadores = []
     nombreBuscar = ""
-    #Solicitar lista de trabajadores independientes
+    # Solicitar lista de trabajadores independientes
     if bool(datosForm) and datosForm.get('fname') != "":
-        nombreBuscar = datosForm.get('fname') #Obtención del campo nombre
-        #Busqueda de trabajadores que contengan en su nombre el campo ingresado
-        idBuscados = [ti.id for ti in Trabajador.objects.all()  if nombreBuscar in ti.NombreCompleto() or nombreBuscar in ti.NombreCompleto().lower()]
-        #Lista de trabajadores con similitudes
+        nombreBuscar = datosForm.get('fname')  # Obtención del campo nombre
+        # Busqueda de trabajadores que contengan en su nombre el campo ingresado
+        idBuscados = [ti.id for ti in Trabajador.objects.all() if
+                      nombreBuscar in ti.NombreCompleto() or nombreBuscar in ti.NombreCompleto().lower()]
+        # Lista de trabajadores con similitudes
         trabajadores = Trabajador.objects.filter(id__in=idBuscados)
 
-
-    #Carga de la lista en el contexto
+    # Carga de la lista en el contexto
     contexto = {}
     contexto["listaTrabajadores"] = trabajadores
     contexto["nombreBuscAnterior"] = nombreBuscar
-    contexto["usuario"] = request.user
+    contexto["usuario"] = usuario
+    contexto["conexion"] = conexion
 
-    print("Usuario: ",contexto["usuario"])
+    print("Usuario: ", contexto["usuario"])
     print(request.user.is_anonymous)
 
     import sys
     sys.stdin.flush()
 
-    #renderizado del html
-    return render(request,"especialistas.html",contexto)
+    # renderizado del html
+    return render(request, "especialistas.html", contexto)
 
-def detalleTrabajador(request,id):
-    
-    #Solicitar información del trabajador
+
+def detalleTrabajador(request, id):
+    conexion = ""
+    usuario = None
+
+    if request.user.is_authenticated:
+        user = User.objects.get(username=request.user.get_username())
+        trabajador_c = Trabajador.objects.filter(cuenta_id=user.id).first()
+
+        if trabajador_c is None:
+            usuario = Cliente.objects.get(cuenta_id=user.id)
+            conexion = "cliente"
+        else:
+            usuario = trabajador_c
+            conexion = "trabajador"
+
+    # Solicitar información del trabajador
     trabajador = get_object_or_404(Trabajador, id=id)
 
-    #Cargar el contexto
-    context ={}
+    # Cargar el contexto
+    context = {}
     context["trabajador"] = trabajador
-    context["usuario"] = request.user
+    context["usuario"] = usuario
+    context["conexion"] = conexion
 
-    print("Usuario: ",context["usuario"])
+    print("Usuario: ", context["usuario"])
     print(request.user.is_anonymous)
 
     import sys
     sys.stdin.flush()
 
-    #renderizar
-    return render(request,"MostrarTI.html",context)
+    # renderizar
+    return render(request, "MostrarTI.html", context)

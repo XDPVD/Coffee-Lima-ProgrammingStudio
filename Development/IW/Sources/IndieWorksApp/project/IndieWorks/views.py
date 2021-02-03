@@ -64,4 +64,19 @@ class Login(HttpRequest):
         return redirect('login')
     
 def nosotros(request):
-    return render(request,"nosotros.html",{})
+    conexion = ""
+    usuario = None
+
+    if request.user.is_authenticated:
+        user = User.objects.get(username=request.user.get_username())
+        trabajador = Trabajador.objects.filter(cuenta_id=user.id).first()
+
+        if trabajador is None:
+            usuario = Cliente.objects.get(cuenta_id=user.id)
+            conexion = "cliente"
+        else:
+            usuario = trabajador
+            conexion = "trabajador"
+
+    diccionario = {"usuario": usuario, "conexion": conexion}
+    return render(request,"nosotros.html", diccionario)
