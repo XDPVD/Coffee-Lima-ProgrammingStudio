@@ -66,10 +66,19 @@ def busquedaTrabInd(request):
         trabajadores = Trabajador.objects.filter(id__in=idBuscados)
     else:
         return redirect('../inicio/')
+
     #Carga de la lista en el contexto
     contexto = {}
     contexto["listaTrabajadores"] = trabajadores
     contexto["nombreBuscAnterior"] = nombreBuscar
+    contexto["usuario"] = request.user
+
+    print("Usuario: ",contexto["usuario"])
+    print(request.user.is_anonymous)
+
+    import sys
+    sys.stdin.flush()
+
     #renderizado del html
     return render(request,"lista-ti.html",contexto)
 
@@ -81,5 +90,13 @@ def detalleTrabajador(request,id):
     #Cargar el contexto
     context ={}
     context["trabajador"] = trabajador
+    context["usuario"] = request.user
+
+    print("Usuario: ",context["usuario"])
+    print(request.user.is_anonymous)
+
+    import sys
+    sys.stdin.flush()
+
     #renderizar
     return render(request,"detalle-trabajador.html",context)
