@@ -6,6 +6,12 @@
 </head>
 <body>
     <h1>Mis Servicios</h1>
+    {% for servicio in servicios %}
+    <div>
+        <h3>{{servicio.nombre}}</h3>
+        <h4>{{servicio.descripcion}}</h4>
+    </div>
+    {% endfor %}
     <div>
         <form action="{% url 'publicar_servicio' %}">
             <button type="submit">Publicar Servicios</button>
