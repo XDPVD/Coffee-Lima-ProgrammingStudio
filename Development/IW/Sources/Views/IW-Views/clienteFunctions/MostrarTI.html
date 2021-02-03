@@ -15,10 +15,13 @@
     <link href="../ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link type="text/css" rel="stylesheet" href="../css/estilos.css" />
-    <title>IndieWorks Mostrar TI</title>
+    <title>IndieWorks-Mostrar Especialista</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
     <a class="navbar-brand" href="#"><img src="../images/favicon1.png" alt="logo">IndieWorks</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,23 +33,16 @@
                 <a class="nav-link" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link active disabled" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Especialistas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Nosotros</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <form class="form-search content-search navbar-form ml-auto" action="" method="post">
-                <div class="input-group">
-                    <input placeholder="Buscar" class="form-control form-text" type="text" size="30" maxlength="128" />
-                    <button class="btn btn-outline-light dropdown-toggle px-3" type="button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Buscar Servicios</a>
-                        <a class="dropdown-item" href="#">Buscar Trabajadores</a>
-                    </div>
-                </div>
-            </form>
             <!--Ya autenticado como trabajador
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,6 +58,7 @@
             </li>-->
 
             <!--Ya autenticado como cliente-->
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Correo del cliente
@@ -74,20 +71,26 @@
                     <a class="dropdown-item" href="#">Cerrar Sesión</a>
                 </div>
             </li>
-
+            
             <!--No autenticado
             <li class="nav-item ">
-                <a class="nav-link active disabled" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+                <a class="nav-link " href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="#">Registrarse</a>
-            </li>-->
+            </li>
+            -->
         </ul>
     </div>
 </nav>
-    <br>
-
-    <div class="product">
+<br>
+    <div class="product mb-0">
+      <a href="../servicios/Servicios.html" style="text-decoration:none " class="col-2 btn-group btn-group-sm justify-content-center " role="group " aria-label="Basic example ">
+        <div class="boton1 ">
+                <img class="img-fluid " src="../images/Boton/volver.png " alt=" ">
+        </div>
+      </a>
+      <br>
     	<div class="container">
         <div class="row">
           <div class="col-sm-7 col-md-7">
@@ -145,10 +148,10 @@
 
             <h1>Servicio de Carpintería</h1>
 
-            <p><h5>&middot; Especialista: Juana Ruiz Romero</h5></p>
-            <br><h5>&middot;Especialidad: Carpinteria</h5></p>
-            &middot;Área de trabajo: El Agustino</p>
-            <br>&middot; Descripción:
+            <p><h5>Especialista: Juana Ruiz Romero</h5></p>
+            <br><h5>Especialidad: Carpinteria</h5>
+            Área de trabajo: El Agustino</p>
+            <br>Descripción:
             <p>  Se elaboran muebles y accesorios tales como ventanas,techos, pisos, paredes, puertas de madera, ventanas, sillones, estantes y otras estructuras.</p>    
                <!--/ Ubicación-->
             <button class="btn btn-primary btn-rounded"> <i class="ion-bag"></i> Solicitar servicio</button>
@@ -184,6 +187,7 @@
       </div>
       <br>
   </div>
+
 
     <footer class="text-center bg-dark text-light py-1 mt-auto">
         <p>Copyright © 2020 Todos los derechos reservados</p>
