@@ -62,3 +62,6 @@ class Login(HttpRequest):
     def logoutUser(request):
         logout(request)
         return redirect('login')
+    
+def nosotros(request):
+    return render(request,"nosotros.html",{})

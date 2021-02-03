@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    {% load static %}
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +15,7 @@
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/estilos.css" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}" />
     <title>IndieWorks-Mostrar Especialista</title>
 </head>
 
@@ -73,21 +74,44 @@
             </li>
             -->
             <!--No autenticado-->
-                {% if request.user.is_anonymous %}
-                <li class="nav-item ">
-                    <a class="nav-link " href="/login"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Registrarse</a>
+                {% if conexion == "trabajador" %}
+                <!--Ya autenticado como trabajador-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{usuario.nombre}} {{usuario.apellido_paterno}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'mis_servicios' %}">Mis Servicios</a>
+                            <a class="dropdown-item" href="{% url 'nuevo_servicio' %}">Publicar Servicio</a>
+                            <a class="dropdown-item" href="#">Configuración</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                {% elif conexion == "cliente" %}
+                <!--Ya autenticado como cliente-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{usuario.nombre}} {{usuario.apellido_paterno}}
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Trabaj. Favoritos</a>
+                        <a class="dropdown-item" href="#">Trabaj. Potenciales</a>
+                        <a class="dropdown-item" href="#">Configuración</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    </div>
                 </li>
                 {% else %}
-                <li class="nav-item ">
-                    <a class="nav-link " href="#"><i class="fas fa-user mr-2 "></i>{{request.user}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/logout">Cerrar Sesion</a>
-                </li>
+                    <!--No autenticado-->
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{% url 'login' %}"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'registro' %}">Registrarse</a>
+                    </li>
                 {% endif %}
+
         </ul>
     </div>
 </nav>
