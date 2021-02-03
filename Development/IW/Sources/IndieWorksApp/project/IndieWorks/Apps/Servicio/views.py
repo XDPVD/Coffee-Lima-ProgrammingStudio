@@ -63,4 +63,5 @@ class ServicioControlador(HttpRequest):
             servicio_form = ServicioForm()
 
             diccionario = {"servicio": servicio_form, "mensaje": mensaje}
+            return redirect("mis_servicios")
         return render(request, "PublicarServicio.html", diccionario)

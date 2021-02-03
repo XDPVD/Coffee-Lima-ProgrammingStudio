@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import Inicio
+from .views import Inicio, Registro, Login
 from .Apps.Cliente.views import ClienteRegistro
 from .Apps.Trabajador.views import TrabajadorRegistro,busquedaTrabInd, detalleTrabajador
-from .views import Login
+from .Apps.Servicio.views import ServicioControlador
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,12 +30,17 @@ urlpatterns = [
     path('login_auth/', Login.autenticarLogin, name="login_auth"),
     path('logout/', Login.logoutUser, name="logout"),
 
+    path('registro/', Registro.registro, name="registro"),
     path('registroc/', ClienteRegistro.registro, name="cliente_registro"),
     path('registroc_resultado/', ClienteRegistro.procesarRegistro,
          name="cliente_registro_resultado"),
     path('registrot/', TrabajadorRegistro.registro, name="trabajador_registro"),
     path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
          name="trabajador_registro_resultado"),
+
+    path('mis_servicios/', ServicioControlador.misServicios, name="mis_servicios"),
+    path('mis_servicios/nuevo', ServicioControlador.publicarServicio, name="nuevo_servicio"),
+    path('mis_servicios/procesar', ServicioControlador.procesarServicio, name="procesar_servicio"),
 
     path('busqueda/', busquedaTrabInd, name="lista-trabajadores"),
     path('trabajador/<int:id>', detalleTrabajador, name="detalle-trabajador"),
