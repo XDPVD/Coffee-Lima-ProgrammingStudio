@@ -11,10 +11,11 @@ from django.shortcuts import render, redirect
 class Login(HttpRequest):
 
     def loginUser(request):
+        print(request.user,flush=True)
         if request.user.is_authenticated:
             return redirect('inicio')
         else:
-            return render(request, "index.html")
+            return render(request, "Login.html")
 
     def autenticarLogin(request):
         if request.method == 'POST':

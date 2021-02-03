@@ -69,12 +69,21 @@
                 </li>-->
 
                 <!--No autenticado-->
+                {% if request.user.is_anonymous %}
                 <li class="nav-item ">
-                    <a class="nav-link " href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+                    <a class="nav-link " href="/login"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="#">Registrarse</a>
                 </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="nav-link " href="#"><i class="fas fa-user mr-2 "></i>{{request.user}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/logout">Cerrar Sesion</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
