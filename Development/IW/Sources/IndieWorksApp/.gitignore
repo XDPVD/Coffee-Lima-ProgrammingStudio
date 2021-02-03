@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# created by virtualenv automatically
 **/__pycache__/
 *.py[cod]
 *$py.class
 
-=======
->>>>>>> main
 /venv
