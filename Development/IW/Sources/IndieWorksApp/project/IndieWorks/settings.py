@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'IndieWorks.Apps.Cliente',
-    'IndieWorks.Apps.Trabajador'
+    'IndieWorks.Apps.Trabajador',
+    'IndieWorks.Apps.Post'
 ]
 
 MIDDLEWARE = [
@@ -80,10 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'IndieWorks',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'admin',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

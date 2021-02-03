@@ -2,3 +2,8 @@ asgiref==3.3.1
 Django==3.1.5
 pytz==2020.5
 sqlparse==0.4.1
+asgiref==3.3.1
+Django==3.1.5
+mysqlclient @ file:///D:/WorkSpacePersonal/WorkSpace%20PDF%27s%2C%20textos%20y%20ppt%27s/UNMSM/Ciclo%20VI/GCS/Proyecto/indieGit/Development/IW/Sources/IndieWorksApp/mysqlclient-1.4.6-cp38-cp38-win32.whl
+pytz==2020.5
+sqlparse==0.4.1

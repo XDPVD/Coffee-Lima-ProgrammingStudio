@@ -49,16 +49,13 @@
             <div class="col-md-3 col-1"></div>
             <div class="col">
                 <h1 class="text-center pb-4">Registrar perfil de Cliente</h1>
-                <!--
-                    Ya mira mongol, para spawnear tu mensaje de alerta, simplemente vas a poner {% if message %} para iniciar el condicional
-                    y {% endif %} para cerrarlo, la lógica no te interesa, solo ten en cuenta que cuando falle el registro va a saltar lo
-                    que sea que esté en esa condicional. Hazlo emergente, haz que salga debajo de un div, me viene y me va
-                -->
-                {% if message %}
+
+                {% if mensaje %}
                 <div class="alert alert-danger" role="alert">
                     ¡Alerta! Error en los campos ingresados
                 </div>
                 {% endif %}
+
                 <form method="POST" action="{% url 'cliente_registro_resultado' %}">
                     {% csrf_token %}
 
@@ -87,6 +84,10 @@
                             </div>
                             <div class="col-sm-12">
                                 <input type="password" name="password2" value="" placeholder="Confirmar contraseña" required="" class="form-control" {{user.password2.value}} /><br />
+                            </div>
+                            <div class="col-sm-12">
+                                <p>• La contraseña debe de contar con al menos 8 caracteres.</p>
+                                <p>• Debe de incluir letras y números en su contraseña.</p>
                             </div>
                         </div>
                     </div>

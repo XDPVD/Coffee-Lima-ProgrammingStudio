@@ -2,9 +2,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpRequest
+from django.http.request import QueryDict
 from django.shortcuts import render, redirect
-
-from IndieWorks.Apps.Trabajador.forms import TrabajadorForm, TrabajadorUserForm
+from .models import Trabajador
+from django.shortcuts import get_object_or_404
+from .forms import TrabajadorForm, TrabajadorUserForm
 
 # Create your views here.
 
@@ -12,10 +14,13 @@ from IndieWorks.Apps.Trabajador.forms import TrabajadorForm, TrabajadorUserForm
 class TrabajadorRegistro(HttpRequest):
 
     def registro(request):
-        trabajador_form = TrabajadorForm()
-        trabajador_user_form = TrabajadorUserForm()
-        diccionario = {"trabajador": trabajador_form, "user": trabajador_user_form}
-        return render(request, "RegistroTrabajador.html", diccionario)
+        if request.user.is_authenticated:
+            return redirect('inicio')
+        else:
+            trabajador_form = TrabajadorForm()
+            trabajador_user_form = TrabajadorUserForm()
+            diccionario = {"trabajador": trabajador_form, "user": trabajador_user_form}
+            return render(request, "RegistroTrabajador.html", diccionario)
 
     def procesarRegistro(request):
         trabajador_form = TrabajadorForm(request.POST)
@@ -50,3 +55,51 @@ class TrabajadorRegistro(HttpRequest):
 
         diccionario = {"cliente": trabajador_form, "user": trabajador_user_form, "mensaje": mensaje}
         return render(request, "RegistroTrabajador.html", diccionario)
+
+
+def busquedaTrabInd(request):
+    
+    datosForm = request.POST
+    #Solicitar lista de trabajadores independientes
+    if bool(datosForm) and datosForm.get('fname') != "":
+        nombreBuscar = datosForm.get('fname') #Obtención del campo nombre
+        #Busqueda de trabajadores que contengan en su nombre el campo ingresado
+        idBuscados = [ti.id for ti in Trabajador.objects.all()  if nombreBuscar in ti.NombreCompleto() or nombreBuscar in ti.NombreCompleto().lower()]
+        #Lista de trabajadores con similitudes
+        trabajadores = Trabajador.objects.filter(id__in=idBuscados)
+    else:
+        return redirect('../inicio/')
+
+    #Carga de la lista en el contexto
+    contexto = {}
+    contexto["listaTrabajadores"] = trabajadores
+    contexto["nombreBuscAnterior"] = nombreBuscar
+    contexto["usuario"] = request.user
+
+    print("Usuario: ",contexto["usuario"])
+    print(request.user.is_anonymous)
+
+    import sys
+    sys.stdin.flush()
+
+    #renderizado del html
+    return render(request,"lista-ti.html",contexto)
+
+def detalleTrabajador(request,id):
+    
+    #Solicitar información del trabajador
+    trabajador = get_object_or_404(Trabajador, id=id)
+
+    #Cargar el contexto
+    context ={}
+    context["trabajador"] = trabajador
+    context["usuario"] = request.user
+
+    print("Usuario: ",context["usuario"])
+    print(request.user.is_anonymous)
+
+    import sys
+    sys.stdin.flush()
+
+    #renderizar
+    return render(request,"detalle-trabajador.html",context)
