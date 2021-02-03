@@ -44,11 +44,13 @@ class ServicioControlador(HttpRequest):
         return render(request, "PublicarServicio.html", diccionario)
 
     def buscarServicio(request):
-        if request.method == 'POST':
+        if request.method == 'GET':
+            return render(request, "Servicios.html")
+
+        elif request.method == 'POST':
             servicio = request.POST.get('servicio')
             servicio_split = servicio.split()
             reduce_query = reduce(
                 or_, (Q(nombre__icontains=x) for x in servicio_split))
             servicios = Servicio.objects.filter(reduce_query)
-            print(servicios)
-            return render(request, "lista-servicios.html", {'servicios': servicios})
+            return render(request, "Servicios.html", {'servicios': servicios})
