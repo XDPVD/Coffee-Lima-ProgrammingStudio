@@ -2,8 +2,7 @@
 /*sobreescribiendo los estilos de bootstrap*/
 .bg-primary {
   background-color: #7e67e6 !important; }
-.bg-default{
-  background-color: #ffffff !important; }
+
 .text-primary {
   color: #7e67e6 !important; }
 
@@ -44,12 +43,8 @@ p {
 .primary {
   color: #8B2B16; }
 
+.ti-search:before {
+	content: "\e610";
+}  
+
 /*# sourceMappingURL=estilos.css.map */
-
-
-#upload-label {
-  position:fixed;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(+50%);
-}
