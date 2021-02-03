@@ -61,7 +61,7 @@ def busquedaTrabInd(request):
     if bool(datosForm) and datosForm.get('fname') != "":
         nombreBuscar = datosForm.get('fname') #Obtención del campo nombre
         #Busqueda de trabajadores que contengan en su nombre el campo ingresado
-        idBuscados = [ti.id for ti in Trabajador.objects.all() if nombreBuscar in ti.NombreCompleto()]
+        idBuscados = [ti.id for ti in Trabajador.objects.all()  if nombreBuscar in ti.NombreCompleto() or nombreBuscar in ti.NombreCompleto().lower()]
         #Lista de trabajadores con similitudes
         trabajadores = Trabajador.objects.filter(id__in=idBuscados)
     else:
