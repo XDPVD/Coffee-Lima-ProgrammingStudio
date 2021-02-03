@@ -19,48 +19,72 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
-        <div class="col-12">
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <a class="navbar-brand" href="#"><img src="../images/favicon1.png" alt="logo">IndieWorks</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trabajador</a>
-                    </li>
-                     <li class="dropdown">
-                        <a href="../catalog/" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-link"><a href="#"> Servicios publicados </a></li>
-                          <li class="nav-link"><a href="#"> Publicar servicio </a></li>
-                        </ul>
-                      </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                </ul>
-                <form class="form-search content-search navbar-form ml-auto" action="" method="post">
-                  <div class="input-group">
-                      <input placeholder="Buscar" class="form-control form-text" type="text" size="20" maxlength="128" />
-                      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>                        
-                  </div>
-              </form>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active disabled" href="#">Registrarse</a>
-                    </li>
-                </ul>
-            </div>
-        </div>    
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
+    <a class="navbar-brand" href="#"><img src="../images/favicon1.png" alt="logo">IndieWorks</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <form class="form-search content-search navbar-form ml-auto" action="" method="post">
+                <div class="input-group">
+                    <input placeholder="Buscar" class="form-control form-text" type="text" size="30" maxlength="128" />
+                    <button class="btn btn-outline-light dropdown-toggle px-3" type="button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-search"></i></button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Buscar Servicios</a>
+                        <a class="dropdown-item" href="#">Buscar Trabajadores</a>
+                    </div>
+                </div>
+            </form>
+            <!--Ya autenticado como trabajador
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Correo del trabajador
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../servicios/MisServicios.html">Mis Servicios</a>
+                    <a class="dropdown-item" href="../servicios/PublicarServicio.html">Publicar Servicio</a>
+                    <a class="dropdown-item" href="#">Configuración</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </div>
+            </li>-->
+
+            <!--Ya autenticado como cliente-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Correo del cliente
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Trabaj. Favoritos</a>
+                    <a class="dropdown-item" href="#">Trabaj. Potenciales</a>
+                    <a class="dropdown-item" href="#">Configuración</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </div>
+            </li>
+
+            <!--No autenticado
+            <li class="nav-item ">
+                <a class="nav-link active disabled" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Registrarse</a>
+            </li>-->
+        </ul>
+    </div>
+</nav>
     <br>
 
     <div class="product">
@@ -119,13 +143,13 @@
           <div class="col-sm-5 col-md-5">
             <img src="../images/carpintera/icono_carpintero.png" alt="HP" class="brand hidden-xs" />
 
-            <h1>Servcio de Carpintería</h1>
+            <h1>Servicio de Carpintería</h1>
 
-            <p><h4>&middot; Especialista: Juana Ruiz Romero</h3></p>
-            <p><h5>&middot; Especialidad: Carpinteria</h3> </p>
-            <p><h5>&middot; Área de trabajo: El Agustino</h3> </p>
-            <p>&middot; Descrición:</p>
-            <p>Se elaboran muebles y accesorios tales como ventanas,techos, pisos, paredes, puertas de madera, ventanas, sillones, estantes y otras estructuras.</p>    
+            <p><h5>&middot; Especialista: Juana Ruiz Romero</h5></p>
+            <br><h5>&middot;Especialidad: Carpinteria</h5></p>
+            &middot;Área de trabajo: El Agustino</p>
+            <br>&middot; Descripción:
+            <p>  Se elaboran muebles y accesorios tales como ventanas,techos, pisos, paredes, puertas de madera, ventanas, sillones, estantes y otras estructuras.</p>    
                <!--/ Ubicación-->
             <button class="btn btn-primary btn-rounded"> <i class="ion-bag"></i> Solicitar servicio</button>
           </div>
@@ -141,7 +165,7 @@
               <label class="h3">Ubicación.</label><br>
               Av. Riva Aguero 788 interior 135<br>
               El Agustino, Lima, Perú<br>
-              <abbr title="Phone">P:</abbr>celular: 999234544
+              <abbr title="Phone"></abbr>Celular: 999234544
             </address>
 
             <address>
@@ -160,11 +184,6 @@
       </div>
       <br>
   </div>
-
-
-
-
-
 
     <footer class="text-center bg-dark text-light py-1 mt-auto">
         <p>Copyright © 2020 Todos los derechos reservados</p>
