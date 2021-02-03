@@ -14,7 +14,7 @@ class Login(HttpRequest):
         if request.user.is_authenticated:
             return redirect('inicio')
         else:
-            return render(request, "Login.html")
+            return render(request, "index.html")
 
     def autenticarLogin(request):
         if request.method == 'POST':
@@ -38,4 +38,7 @@ class Inicio(HttpRequest):
 
     @login_required(login_url='login')
     def index(request):
-        return render(request, "Inicio.html")
+        return render(request, "index.html")
+
+def nosotros(request):
+    return render(request,"nosotros.html",{})

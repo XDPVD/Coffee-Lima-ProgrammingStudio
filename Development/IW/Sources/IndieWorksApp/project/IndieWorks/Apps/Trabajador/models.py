@@ -26,4 +26,3 @@ class Trabajador(models.Model):
 
     def get_absolute_url(self):
         return reverse("detalle-trabajador", kwargs={"id": self.id})
-    

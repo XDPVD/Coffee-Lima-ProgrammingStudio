@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'IndieWorks',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'admin',
     }
 }
 

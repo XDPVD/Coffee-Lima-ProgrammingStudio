@@ -6,209 +6,196 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap CSS -->
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link href="../css/custom.css" rel="stylesheet">
-    <link href="../css/carousel.css" rel="stylesheet">
-    <link href="../ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/images/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link type="text/css" rel="stylesheet" href="../css/estilos.css" />
-    <title>IndieWorks Mostrar TI</title>
+    <title>IndieWorks Especialistas</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
-        <div class="col-12">
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <a class="navbar-brand" href="#"><img src="../images/favicon1.png" alt="logo">IndieWorks</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trabajador</a>
-                    </li>
-                     <li class="dropdown">
-                        <a href="../catalog/" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-link"><a href="#"> Servicios publicados </a></li>
-                          <li class="nav-link"><a href="#"> Publicar servicio </a></li>
-                        </ul>
-                      </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active disabled" href="#">Registrarse</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="col-12">
-                <form class="form-search content-search navbar-form" action="" method="post">
-                    <div class="input-group">
-                        <input placeholder="Buscar" class="form-control form-text" type="text" size="20" maxlength="128" />
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        
+        <a class="navbar-brand" href="#"><img src="../../static/images/favicon1.png" alt="logo">IndieWorks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active disabled" href="/especialista">Especialistas</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!--Ya autenticado como trabajador
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Correo del trabajador
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../servicios/MisServicios.html">Mis Servicios</a>
+                        <a class="dropdown-item" href="../servicios/PublicarServicio.html">Publicar Servicio</a>
+                        <a class="dropdown-item" href="#">Configuración</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
                     </div>
-                </form>
-            </div>
-        </div>    
-    </nav>
-    <br>
+                </li>-->
 
-    <div class="product">
-    	<div class="container">
-        <div class="row">
-          <div class="col-sm-7 col-md-7">
-            <div class="carousel product" data-count="5" data-current="1">
-              <!-- <button class="btn btn-control"></button> -->
+                <!--Ya autenticado como cliente-->
 
-              <div class="items">
-                <div class="item active" data-marker="1">
-                  <img src="../images/carpintera/carpintera1.png" alt="ChromeBook 11"/>
-                </div>
-                <div class="item" data-marker="2">
-                  <img src="../images/carpintera/carpintera2.png" alt="ChromeBook 11"/>
-                </div>
-                <div class="item" data-marker="3">
-                  <img src="../images/carpintera/carpintera3.png" alt="ChromeBook 11"/>
-                </div>
-                <div class="item" data-marker="4">
-                  <img src="../images/carpintera/carpintera4.png" alt="ChromeBook 11"/>
-                </div>
-                <div class="item" data-marker="5">
-                  <img src="../images/carpintera/carpintera5.png" alt="ChromeBook 11"/>
-                </div>
-                <div class="item" data-marker="6">
-                  <div class="tiles">
-                    <a href="#video " data-gallery="#video" data-source="youtube" data-id="hED0N4CFoqs" data-title="An upscale new Chromebook from HP" data-description="Carpintera Mujer.">
-                      <img src="../images/carpintera/carpintera0.png" alt="ChromeBook 11">
-
-                      <div class="overlay"></div>
-                      <div class="content">
-                        <div class="content-outside">
-                          <div class="content-inside">
-                            <i class="ion-ios-play"></i>
-                            <h1>Mirar video</h1>
-                          </div>
-                        </div>
-                      </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Correo del cliente
                     </a>
-                  </div>
-                </div>
-              </div>
-
-              <ul class="markers">
-                <li data-marker="1" class="active"><img src="../images/carpintera/carpintera1.png" alt="Background"/></li>
-                <li data-marker="2"><img src="../images/carpintera/carpintera2.png" alt="Background"/></li>
-                <li data-marker="3"><img src="../images/carpintera/carpintera3.png" alt="Background"/></li>
-                <li data-marker="4"><img src="../images/carpintera/carpintera4.png" alt="Background"/></li>
-                <li data-marker="5"><img src="../images/carpintera/carpintera5.png" alt="Background"/></li>
-                <li data-marker="6"><img src="../images/carpintera/carpintera0.png" alt="Background"/></li>
-              </ul>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Trabaj. Favoritos</a>
+                        <a class="dropdown-item" href="#">Trabaj. Potenciales</a>
+                        <a class="dropdown-item" href="#">Configuración</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
+                <!--No autenticado
+                <li class="nav-item ">
+                    <a class="nav-link active disabled" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Registrarse</a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <a href="../especialista/" style="text-decoration:none " class="col-2 btn-group btn-group-sm justify-content-center " role="group " aria-label="Basic example ">
+            <div class="boton1 ">
+                    <img class="img-fluid " src="../../static/images/volver.png " alt=" ">
             </div>
-          </div>
-          <!--/Descripción del trabajador-->
-          <div class="col-sm-5 col-md-5">
-            <img src="../images/carpintera/icono_carpintero.png" alt="HP" class="brand hidden-xs" />
+          </a>
+        <div class="row">
+            
+            <div class="col-md-2 col-1"></div>
+            <div class="col-md-8">
+                <h1 class="text-center">Especialistas</h1>
 
-            <h1>Servcio de Carpintería</h1>
+                <!-- Perfil -->
+                <div class="panel panel-default">
 
-            <p><h4>&middot; Especialista: Juana Ruiz Romero</h3></p>
-            <p><h5>&middot; Especialidad: Carpinteria</h3> </p>
-            <p><h5>&middot; Área de trabajo: El Agustino</h3> </p>
-            <p>&middot; Descrición:</p>
-            <p>Se elaboran muebles y accesorios tales como ventanas,techos, pisos, paredes, puertas de madera, ventanas, sillones, estantes y otras estructuras.</p>    
-               <!--/ Ubicación-->
-            <button class="btn btn-primary btn-rounded"> <i class="ion-bag"></i> Solicitar servicio</button>
-          </div>
+                    <!-- Perfil -->
+                    <div class="card">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle" src="../../static/images/carpintero.jpg"
+                                    alt="User profile picture">
+                            </div>
+
+                            <h3 class="profile-username text-center">{{ trabajador.NombreCompleto }}</h3>
+
+                            <!--
+                                <p class="text-muted text-center">Software Engineer</p>
+                                  -->
+                            <!--
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Followers</b> <a class="float-right">1,322</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Following</b> <a class="float-right">543</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Friends</b> <a class="float-right">13,287</a>
+                                        </li>
+                                    </ul>
+                                    -->
+
+                            <a href="#" class="btn btn-primary btn-block"><i
+                                    class="fas fa-phone-alt mb-4"></i><b>Contactar</b></a>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- About Me Box -->
+                    <div class="card-">
+                        <div class="card-header">
+                            <h3>Acerca de mi</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <strong><i class="fas fa-id-card mr-1"></i> DNI:</strong>
+                            <p class="text-muted ">
+                                {{trabajador.dni}}
+                            </p>
+                            <hr>
+                            <strong><i class="fas fa-envelope mr-1"></i> Correo:</strong>
+
+                            <p class="text-muted">{{trabajador.correo}}</p>
+
+                            <hr>
+
+                            <strong><i class="fas fa-phone-alt mr-1"></i> Telefono:</strong>
+
+                            <p class="text-muted">
+                                {{trabajador.telefono}}
+                            </p>
+                            <hr>
+
+
+                            <strong><i class="fas fa-id-card-alt mr-1"></i> RUC:</strong>
+
+                            <p class="text-muted">
+                                {{trabajador.ruc}}
+                            </p>
+                            <hr>
+
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Distrito:</strong>
+
+                            <p class="text-muted">
+                                {{trabajador.distrito}}
+                            </p>
+
+
+                            <hr>
+
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /.card -->
         </div>
-      </div>
+        <div class="col-md-2 col-1"></div>
     </div>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div id="Address">
-            <address>
-              <label class="h3">Ubicación.</label><br>
-              Av. Riva Aguero 788 interior 135<br>
-              El Agustino, Lima, Perú<br>
-              <abbr title="Phone">P:</abbr>celular: 999234544
-            </address>
-
-            <address>
-              <strong>Correo</strong><br>
-              <a href="mailto:#">sup@example.com</a>
-              <br><br>
-
-              <strong>Facebook</strong><br>
-              <a href="mailto:#">/carpinteriaPerú</a>
-            </address>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div id="GoMap"></div>
-        </div>
-      </div>
-      <br>
-  </div>
-
-
-
-
+    </div>
 
 
     <footer class="text-center bg-dark text-light py-1 mt-auto">
         <p>Copyright © 2020 Todos los derechos reservados</p>
     </footer>
-    <script src="../js/jquery-latest.min.js"></script>
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/core.js"></script>
-    <script src="../js/catalog.js"></script>
-    <script src="../js/carousel.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4aLLXYWiLslF54XA_w9m1IynlKd0-lyE&callback=initMap"></script>
+
+
+
+
+
     <script src="https://kit.fontawesome.com/160f79963e.js" crossorigin="anonymous"></script>
-
-    <script>
-      function initMap() {
-        var mapDiv = document.getElementById('GoMap');
-        var markerLatLng = {lat: 37.77610833280797, lng: -122.41745173931122};
-
-        var map = new google.maps.Map(mapDiv, {
-            center: {lat: 37.77610833280797, lng: -122.41745173931122},
-            zoom: 8
-        });
-
-         var marker = new google.maps.Marker({
-          position: markerLatLng,
-          map: map,
-          title: 'Unistore'
-        });
-
-
-        // google.maps.event.addListener(map, "rightclick", function(event) {
-        //     var lat = event.latLng.lat();
-        //     var lng = event.latLng.lng();
-        //     // populate yor box/field with lat, lng
-        //     console.log("Lat=" + lat + "; Lng=" + lng);
-        // });
-
-      }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

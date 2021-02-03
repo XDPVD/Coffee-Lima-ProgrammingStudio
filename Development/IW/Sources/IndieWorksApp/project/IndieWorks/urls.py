@@ -20,7 +20,7 @@ from .views import Inicio
 from .Apps.Cliente.views import ClienteRegistro
 from .Apps.Trabajador.views import TrabajadorRegistro, busquedaTrabInd, detalleTrabajador
 from .Apps.Servicio.views import ServicioControlador
-from .views import Login
+from .views import Login, nosotros
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,8 +38,10 @@ urlpatterns = [
     path('registrot_resultado/', TrabajadorRegistro.procesarRegistro,
          name="trabajador_registro_resultado"),
 
-    path('busqueda/', busquedaTrabInd, name="lista-trabajadores"),
-    path('trabajador/<int:id>', detalleTrabajador, name="detalle-trabajador"),
+    path('especialista/', busquedaTrabInd, name="lista-trabajadores"),
+    path('especialista/<int:id>', detalleTrabajador, name="detalle-trabajador"),
 
-    path('servicios/', ServicioControlador.buscarServicio, name='lista-servicios')
+    path('servicios/', ServicioControlador.buscarServicio, name='lista-servicios'),
+
+    path('nosotros/',nosotros,name="nosotros")
 ]
