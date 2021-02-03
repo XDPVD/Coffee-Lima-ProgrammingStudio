@@ -11,6 +11,7 @@ from django.shortcuts import render, redirect
 class Login(HttpRequest):
 
     def loginUser(request):
+        print(request.user,flush=True)
         if request.user.is_authenticated:
             return redirect('inicio')
         else:
@@ -38,4 +39,7 @@ class Inicio(HttpRequest):
 
     @login_required(login_url='login')
     def index(request):
-        return render(request, "Inicio.html")
+        return render(request, "index.html")
+
+def nosotros(request):
+    return render(request,"nosotros.html",{})

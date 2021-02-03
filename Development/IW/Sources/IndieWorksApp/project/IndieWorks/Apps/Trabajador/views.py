@@ -60,6 +60,8 @@ class TrabajadorRegistro(HttpRequest):
 def busquedaTrabInd(request):
     
     datosForm = request.POST
+    trabajadores = []
+    nombreBuscar = ""
     #Solicitar lista de trabajadores independientes
     if bool(datosForm) and datosForm.get('fname') != "":
         nombreBuscar = datosForm.get('fname') #Obtención del campo nombre
@@ -67,8 +69,7 @@ def busquedaTrabInd(request):
         idBuscados = [ti.id for ti in Trabajador.objects.all()  if nombreBuscar in ti.NombreCompleto() or nombreBuscar in ti.NombreCompleto().lower()]
         #Lista de trabajadores con similitudes
         trabajadores = Trabajador.objects.filter(id__in=idBuscados)
-    else:
-        return redirect('../inicio/')
+
 
     #Carga de la lista en el contexto
     contexto = {}
@@ -83,7 +84,7 @@ def busquedaTrabInd(request):
     sys.stdin.flush()
 
     #renderizado del html
-    return render(request,"lista-ti.html",contexto)
+    return render(request,"especialistas.html",contexto)
 
 def detalleTrabajador(request,id):
     
@@ -102,4 +103,4 @@ def detalleTrabajador(request,id):
     sys.stdin.flush()
 
     #renderizar
-    return render(request,"detalle-trabajador.html",context)
+    return render(request,"MostrarTI.html",context)

@@ -32,7 +32,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
+                {% comment %} <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Correo del usuario
                     </a>
@@ -43,7 +43,22 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Cerrar Sesión</a>
                     </div>
+                </li> {% endcomment %}
+                {% if request.user.is_anonymous %}
+                <li class="nav-item ">
+                    <a class="nav-link " href="/login"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Registrarse</a>
+                </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="nav-link " href="#"><i class="fas fa-user mr-2 "></i>{{request.user}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/logout">Cerrar Sesion</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
