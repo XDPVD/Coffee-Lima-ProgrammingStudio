@@ -45,6 +45,20 @@ p {
 
 .ti-search:before {
 	content: "\e610";
+<<<<<<< HEAD
 }  
 
+=======
+} 
+ 
+#map {
+  height: 100%;
+  }
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }  
+>>>>>>> ca6738a5ff3fb67adc5bde72778d1acbccfdd57f
 /*# sourceMappingURL=estilos.css.map */
