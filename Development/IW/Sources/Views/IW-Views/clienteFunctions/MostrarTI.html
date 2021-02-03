@@ -44,6 +44,12 @@
                         <a class="nav-link" href="#">Nosotros</a>
                     </li>
                 </ul>
+                <form class="form-search content-search navbar-form ml-auto" action="" method="post">
+                  <div class="input-group">
+                      <input placeholder="Buscar" class="form-control form-text" type="text" size="20" maxlength="128" />
+                      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>                        
+                  </div>
+              </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ">
                         <a class="nav-link" href="#"><i class="fas fa-user mr-2 "></i>Inicio Sesión</a>
@@ -52,16 +58,6 @@
                         <a class="nav-link active disabled" href="#">Registrarse</a>
                     </li>
                 </ul>
-            </div>
-            
-            <div class="col-12">
-                <form class="form-search content-search navbar-form" action="" method="post">
-                    <div class="input-group">
-                        <input placeholder="Buscar" class="form-control form-text" type="text" size="20" maxlength="128" />
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        
-                    </div>
-                </form>
             </div>
         </div>    
     </nav>
@@ -159,7 +155,7 @@
           </div>
         </div>
         <div class="col-sm-8">
-          <div id="GoMap"></div>
+          <div id ="map"> </div> 
         </div>
       </div>
       <br>
@@ -183,32 +179,32 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4aLLXYWiLslF54XA_w9m1IynlKd0-lyE&callback=initMap"></script>
     <script src="https://kit.fontawesome.com/160f79963e.js" crossorigin="anonymous"></script>
 
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
     <script>
-      function initMap() {
-        var mapDiv = document.getElementById('GoMap');
-        var markerLatLng = {lat: 37.77610833280797, lng: -122.41745173931122};
-
-        var map = new google.maps.Map(mapDiv, {
-            center: {lat: 37.77610833280797, lng: -122.41745173931122},
-            zoom: 8
-        });
-
-         var marker = new google.maps.Marker({
-          position: markerLatLng,
-          map: map,
-          title: 'Unistore'
-        });
-
-
-        // google.maps.event.addListener(map, "rightclick", function(event) {
-        //     var lat = event.latLng.lat();
-        //     var lng = event.latLng.lng();
-        //     // populate yor box/field with lat, lng
-        //     console.log("Lat=" + lat + "; Lng=" + lng);
-        // });
-
-      }
+      
+        var map;
+       function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 43.5293, lng: -5.6773},
+            zoom: 13,
+          });
+          var marker = new google.maps.Marker({
+            position: {lat: 43.542194, lng: -5.676875},
+            map: map,
+      title: 'Acuario de Gijón'
+          });
+        }   
     </script>
+    
+    
 </body>
 
 </html>
